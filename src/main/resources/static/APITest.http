@@ -1,0 +1,30 @@
+### 1.generate token
+POST http://localhost:8090/auth/token
+Content-Type: application/json
+
+{
+  "id": "idtest",
+  "name": "nametest"
+}
+
+### 2.token test
+POST http://localhost:8090/auth/api
+Content-Type: application/json
+Authorization: Bearer eyJ0eXBlIjoiYWNjZXNzIiwiYWxnIjoiSFMyNTYifQ.eyJzdWIiOiJpZHRlc3QiLCJhdXRoIjoiaWR0ZXN0IiwibGV2ZWwiOiJsdjk5IiwibmFtZSI6Im5hbWUxMjM0IiwiZXhwIjoxNjY3ODk0Mzc5fQ.tYJbQuZTIuePXslpixfQDYIxA4YbElvnU0E0wWQF4K4
+
+{
+  "refreshToken": "eyJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NjgxMzM4OTR9.t03_yGiYU6KF-8TUJNoAMSlJnihlK3QSWqiLe2SJGIw"
+}
+
+### 3.regenerate test
+POST http://localhost:8090/auth/refresh
+Content-Type: application/json
+Authorization: Bearer eyJ0eXBlIjoicmVmcmVzaCIsImFsZyI6IkhTMjU2In0.eyJleHAiOjE2Njg0OTg1NzksImF1dGhLZXkiOiIyZTA2OWRhYi0yYmUwLTQzMTItYTkwNy02OTJkYjBiMmY0OWEifQ.J8bpclJcLcQIRhANXILOwLY0548u339PcS_1sVEtzo8
+
+{
+  "refreshToken": "eyJ0eXBlIjoicmVmcmVzaCIsImFsZyI6IkhTMjU2In0.eyJleHAiOjE2Njg0OTEzODQsImF1dGhLZXkiOiI5YmMyYmFiMy1hY2Q4LTRhZjYtYjU4Mi02Y2EyY2Q1M2IwZjIifQ.xsaT45Xhw3-mt94R5WjVToVheYmPIdEotpJnWTTHXnw",
+  "id": "refreshID",
+  "name": "Rname"
+}
+
+###
